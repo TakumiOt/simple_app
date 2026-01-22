@@ -13,6 +13,15 @@ services:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - "postgres_data:/var/lib/postgresql"
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    volumes:
+      - "mongo_data:/data/db"
 
 volumes:
   postgres_data:
+  mongo_data:
