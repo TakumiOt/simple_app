@@ -8,21 +8,23 @@ name = "app"
 path = "src/bin/app.rs"
 
 [workspace]
-members = ["libs/domain", "libs/repository"]
+members = ["libs/domain", "libs/infrastructure"]
 
 [workspace.dependencies]
 domain = { path = "./libs/domain" }
-repository = { path = "./libs/repository"}
+infrastructure = { path = "./libs/infrastructure"}
 
 anyhow = "1"
 tokio = { version = "1", features = ["full"] }
 axum = "0.7"
-chrono = "0.4"
+chrono = { version = "0.4", features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
+mongodb = "3"
+bson = { version = "3.1", features = ["serde", "chrono-0_4"] }
 
 [dependencies]
 domain.workspace = true
-repository.workspace = true
+infrastructure.workspace = true
 
 anyhow.workspace = true
 axum.workspace = true
