@@ -3,7 +3,25 @@ name = "server"
 version = "0.1.0"
 edition = "2024"
 
-[dependencies]
+[[bin]]
+name = "app"
+path = "src/bin/app.rs"
+
+[workspace]
+members = ["libs/domain"]
+
+[workspace.dependencies]
+domain = { path = "./libs/domain" }
+
 anyhow = "1"
 tokio = { version = "1", features = ["full"] }
 axum = "0.7"
+chrono = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+
+[dependencies]
+domain.workspace = true
+
+anyhow.workspace = true
+axum.workspace = true
+tokio.workspace = true
