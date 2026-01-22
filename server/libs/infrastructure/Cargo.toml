@@ -1,6 +1,10 @@
 [package]
-name = "repository"
+name = "infrastructure"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+serde.workspace = true
+chrono.workspace = true
+mongodb.workspace = true
+bson.workspace = true
