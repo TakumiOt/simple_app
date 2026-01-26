@@ -4,7 +4,15 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+domain.workspace = true
 serde.workspace = true
 chrono.workspace = true
 mongodb.workspace = true
 bson.workspace = true
+anyhow.workspace = true
+async-trait.workspace = true
+futures.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true
+dotenvy.workspace = true
