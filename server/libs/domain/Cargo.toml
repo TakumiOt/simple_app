@@ -5,3 +5,5 @@ edition = "2024"
 
 [dependencies]
 chrono.workspace = true
+anyhow.workspace = true
+async-trait.workspace = true
